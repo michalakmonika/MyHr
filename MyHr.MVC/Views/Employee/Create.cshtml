@@ -1,0 +1,76 @@
+﻿@using MyHr.Application.Dtos;
+
+@model EmployeeDto
+
+<h1>Nowy pracownik</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form action="/Employee/Create" method="post">
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="FirstName">Imię</label>
+                <input class="form-control" type="text" asp-for="FirstName"/>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="LastName">Nazwisko</label>
+                <input class="form-control" type="text" asp-for="LastName" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="Pesel">PESEL</label>
+                <input class="form-control" type="text" asp-for="Pesel" />
+                <span asp-validation-for="Pesel" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="Country">Kraj</label>
+                <input class="form-control" type="text" asp-for="Country" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="City">Miasto</label>
+                <input class="form-control" type="text" asp-for="City" />
+            </div>            
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="Street">Ulica</label>
+                <input class="form-control" type="text" asp-for="Street" />
+            </div>            
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="HouseNumber">Numer domu</label>
+                <input class="form-control" type="text" asp-for="HouseNumber" />
+            </div>            
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="ApartmentNumber">Numer mieszkania</label>
+                <input class="form-control" type="text" asp-for="ApartmentNumber" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="PostalCode">Kod pocztowy</label>
+                <input class="form-control" type="text" asp-for="PostalCode" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="PhoneNumber">Numer telefonu</label>
+                <input class="form-control" type="text" asp-for="PhoneNumber" />
+            </div>
+
+            <div class="form-group mb-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
